@@ -11,32 +11,45 @@ package noughtsncrosses;
  */
 public class Board {
     
-    public static final int ROWS = 3, COLS = 3;
+    
     
     Tile[][] Tiles;
-    
+    Tile currentTile;
     
     public Board(){
         Init();    
     }
     
     private void Init(){
-        Tiles = new Tile[ROWS][COLS];
-        
-        for(int i = 0; i < ROWS; i++){
-            for(int j = 0; i < COLS; j++){
+         Tiles = new Tile[3][3];
+         currentTile = new Tile(0,0);
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
                 Tiles[i][j] = new Tile(i, j);
             }
         }
     }
     
     public void DrawBoard(){
-        
+   // will loop thought the arry and draw board based
+        for (int row = 0; row < 3; ++row) {
+         for (int col = 0; col < 3; ++col) {
+            Tiles[row][col].print();  
+            if (col < 3 - 1) System.out.print("|");
+         }
+         System.out.println();
+         if (row < 3 - 1) {
+            System.out.println("-----------");
+         }
+      }
+   
+       
     }
     
     public void Reset(){
         
     }
+ 
     
     //checks if the player has won with this move
     public boolean HasWon(TileContent player, Tile current){                                                                                        
@@ -53,9 +66,9 @@ public class Board {
     
     //checks if the game is a draw (it is a draw if no tiles are empty and nobody has won
     public boolean isDraw(){
-        for(Tile[] row : Tiles){
+       for(Tile[] row : Tiles){
             for(Tile tile : row){
-                if (tile.Content != TileContent.Empty) return false;
+                if (tile.Content == TileContent.Empty) {return false;}
             }
         }
         return true;

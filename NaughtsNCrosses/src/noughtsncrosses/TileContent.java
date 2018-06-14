@@ -12,11 +12,11 @@ package noughtsncrosses;
  * enum to store values for tiles with a printable character
  */
 public enum TileContent {
-    Nought('O'), Cross('X'), Empty(' ');
+    Nought(" O "), Cross(" X "), Empty("   ");
     
-    char value;
+    String value;
     
-    TileContent(char value){
+    TileContent(String value){
         this.value = value;
     }
 }

@@ -45,10 +45,6 @@ public class Board {
    
        
     }
-    
-    public void Reset(){
-        
-    }
  
     
     //checks if the player has won with this move

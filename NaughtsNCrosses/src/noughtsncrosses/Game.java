@@ -84,7 +84,7 @@ public class Game {
 
     public static void main(String[] args) {
 
-        System.out.println("WELLCOME TO NOUGHTS AND CROSSES");
+        System.out.println("WELCOME TO NOUGHTS AND CROSSES");
         Game CurrentGame = new Game();
 
     }
